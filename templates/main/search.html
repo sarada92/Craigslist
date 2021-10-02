@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 style="text-align: center">{{ search | title }}</h2>
+
+<div class="row">
+  {% for post in postings %}
+    <div class="col s6 m7">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="{{ post.img }}">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">{{ post.title }}</div>
+          <div class="card-content">
+            <b>{{ post.price }}</b>
+          </div>
+          <div class="card-action">
+            <a href="https://{{ post.link }}" target='_blank' style="color:teal;">View Details<i class="material-icons right">arrow_forward</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+</div>
+
+{% endblock content%}
