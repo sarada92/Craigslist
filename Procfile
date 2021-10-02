@@ -1,0 +1,1 @@
+web: gunicorn CraigsList_SR.wsgi
